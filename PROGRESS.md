@@ -1,6 +1,6 @@
 # Clearday Progress Tracker
 
-Last updated: 2026-06-29 (run 1)
+Last updated: 2026-06-29 (run 2)
 
 ## 1. Documentation
 
@@ -71,7 +71,10 @@ From ESLint cache analysis — all are unused imports/variables:
 | Play Store screenshots plan | **Done** | `store-assets/google-play/screenshots-plan.md` — 6-screenshot sequence |
 | Privacy policy (bilingual) | **Done** | `store-assets/privacy-policy.html` — EN/FR, GDPR/Law 25 references |
 | Launch guide | **Done** | `LAUNCH-GUIDE.md` — step-by-step Google Play submission instructions |
-| App Store listing draft | Not started | Needs description, screenshots plan, age rating |
+| App Store listing draft | **Done** | `store-assets/app-store/APP_STORE_METADATA.md` — full listing, pricing, privacy |
+| App screenshots (generated) | **Done** | 13 PNG files in `store-assets/screenshots/` at 1242×2688px |
+| Play Store feature graphic | **Done** | `store-assets/google-play/feature_graphic.png` — 1024×500px |
+| GitHub Pages (privacy policy) | **Done** | Live at `https://martinlepage26-bit.github.io/clearday/privacy-policy.html` |
 
 ## 6. Compliance Checklist
 
@@ -139,21 +142,26 @@ Dev server note: `libgtk-3.so.0` error on headless Linux is cosmetic (React Nati
 
 ## Next Actions
 
-### Ready for submission (this repo)
-All Google Play Store submission assets are prepared. See `LAUNCH-GUIDE.md` for step-by-step instructions.
+### Ready for submission (this repo) ✅
+All Google Play Store submission assets are fully prepared:
+- Store listing EN + FR
+- Data safety questionnaire
+- Privacy policy (live on GitHub Pages)
+- Feature graphic 1024×500px
+- 13 generated screenshots
+- App Store metadata
+- Mobile code patches
 
 ### Remaining work (clearday-mobile repo)
-1. **Fix 7 hardcoded strings** — translate and add to `src/lib/i18n.ts` EN/FR
+1. **Apply mobile-patches/** — copy fixed utils.ts, ui.tsx; add 5 missing i18n keys
 2. **Fix 18 ESLint warnings** — all unused imports — mechanical cleanup
-3. **Full i18n audit** of `src/lib/i18n.ts` (56 KB) — verify all `t()` keys have both EN and FR values
-4. **Add data export feature** — Settings needs full data export for GDPR portability
-5. **Add privacy policy link** — Settings privacy section needs link to hosted policy
-6. **Run test suites** to verify green baseline
+3. **Add data export feature** — Settings needs full data export for GDPR portability
+4. **Add privacy policy link** — Settings privacy section needs link to hosted privacy policy
+5. **Run test suites** to verify green baseline
 
 ### External actions (user must complete)
-7. **Host privacy policy** at public URL (GitHub Pages or custom domain) — required for Play Store
-8. **Run production EAS build**: `eas build --profile production --platform android`
-9. **Create Google Play Console listing** and fill in data safety form
-10. **Capture 6 screenshots** per `store-assets/google-play/screenshots-plan.md`
-11. **Submit for Google Play review**
-12. **Engage qualified professional** for GDPR and Quebec Law 25 compliance review
+6. **Run production EAS build**: `eas build --profile production --platform android`
+7. **Create Google Play Console listing** — use `store-assets/google-play/` assets
+8. **Set up Clearday Plus subscriptions** in Play Console (monthly $7.99 CA / yearly $59.99 CA)
+9. **Upload .aab + submit for Google Play review** (1–7 days)
+10. **Engage qualified professional** for GDPR and Quebec Law 25 compliance review
