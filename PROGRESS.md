@@ -64,11 +64,14 @@ From ESLint cache analysis — all are unused imports/variables:
 | Item | Status | Notes |
 |------|--------|-------|
 | EAS config | Present | eas.json has dev/preview/production profiles; ASC App ID 6776464254, EAS project 3522d57f |
-| Production EAS build | Not created | No production build submitted yet |
+| Production EAS build | Not created | Requires user to run `eas build --profile production --platform android` locally |
 | App config | Present | app.json: bundle `app.clearday.mobile`, scheme `clearday`, typed routes enabled |
-| Play Store listing draft | Not started | Needs description, screenshots plan, content rating |
+| Play Store listing draft | **Done** | `store-assets/google-play/listing.md` — name, descriptions, category, tags |
+| Play Store data safety | **Done** | `store-assets/google-play/data-safety.md` — all data types declared |
+| Play Store screenshots plan | **Done** | `store-assets/google-play/screenshots-plan.md` — 6-screenshot sequence |
+| Privacy policy (bilingual) | **Done** | `store-assets/privacy-policy.html` — EN/FR, GDPR/Law 25 references |
+| Launch guide | **Done** | `LAUNCH-GUIDE.md` — step-by-step Google Play submission instructions |
 | App Store listing draft | Not started | Needs description, screenshots plan, age rating |
-| Privacy/health-data disclosures | Not started | Required for both stores |
 
 ## 6. Compliance Checklist
 
@@ -136,12 +139,21 @@ Dev server note: `libgtk-3.so.0` error on headless Linux is cosmetic (React Nati
 
 ## Next Actions
 
+### Ready for submission (this repo)
+All Google Play Store submission assets are prepared. See `LAUNCH-GUIDE.md` for step-by-step instructions.
+
+### Remaining work (clearday-mobile repo)
 1. **Fix 7 hardcoded strings** — translate and add to `src/lib/i18n.ts` EN/FR
-2. **Fix 18 ESLint warnings** in clearday-mobile (all unused imports — mechanical cleanup)
+2. **Fix 18 ESLint warnings** — all unused imports — mechanical cleanup
 3. **Full i18n audit** of `src/lib/i18n.ts` (56 KB) — verify all `t()` keys have both EN and FR values
 4. **Add data export feature** — Settings needs full data export for GDPR portability
-5. **Add privacy policy link** — Settings privacy section needs link to full policy (in French for Quebec Law 25)
+5. **Add privacy policy link** — Settings privacy section needs link to hosted policy
 6. **Run test suites** to verify green baseline
-7. **Draft store listings** for Play Store and App Store
-8. **Prepare privacy/health-data disclosures** for both stores
-9. **Engage qualified professional** for GDPR and Quebec Law 25 compliance review
+
+### External actions (user must complete)
+7. **Host privacy policy** at public URL (GitHub Pages or custom domain) — required for Play Store
+8. **Run production EAS build**: `eas build --profile production --platform android`
+9. **Create Google Play Console listing** and fill in data safety form
+10. **Capture 6 screenshots** per `store-assets/google-play/screenshots-plan.md`
+11. **Submit for Google Play review**
+12. **Engage qualified professional** for GDPR and Quebec Law 25 compliance review
