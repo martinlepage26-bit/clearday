@@ -46,7 +46,7 @@
 | Can users opt out of data collection? | Users can choose not to log; account deletion removes all data |
 
 ## Privacy policy URL
-[TO BE CREATED — see privacy-policy.html in this directory]
+https://martinlepage26-bit.github.io/clearday/privacy-policy.html
 
 ## Notes for submission
 

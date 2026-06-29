@@ -15,13 +15,15 @@ Google Play requires a publicly accessible privacy policy URL.
 
 **Option A — GitHub Pages (free, recommended)**
 
-1. The privacy policy is already at `store-assets/privacy-policy.html` in this repo.
-2. Enable GitHub Pages on this repo: Settings → Pages → Source: Deploy from branch → `main` → `/` (root).
-3. Rename or copy the file:
-   ```bash
-   cp store-assets/privacy-policy.html privacy-policy.html
-   ```
-4. Your URL will be: `https://martinlepage26-bit.github.io/clearday/privacy-policy.html`
+The privacy policy (`privacy-policy.html`) and a GitHub Actions deployment workflow are already in the repo. You just need to enable Pages:
+
+1. Go to https://github.com/martinlepage26-bit/clearday/settings/pages
+2. Under **Source**, select **GitHub Actions**
+3. Click **Save**
+4. Go to the Actions tab and re-run the failed "Deploy to GitHub Pages" workflow
+5. Your URL will be: `https://martinlepage26-bit.github.io/clearday/privacy-policy.html`
+
+This is a one-time setup — future pushes to main will auto-deploy.
 
 **Option B — Custom domain**
 
